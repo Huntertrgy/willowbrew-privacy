@@ -1,0 +1,161 @@
+/* Conaksoft / Willowbrew site. Palette from design/art-bible.md (cream, parchment, willow, cocoa).
+   Font: Nunito (SIL Open Font License 1.1, see /assets/fonts/OFL.txt), served locally.
+   No external requests, no trackers, no cookies. */
+
+@font-face {
+  font-family: "Nunito";
+  src: url("fonts/Nunito.ttf") format("truetype");
+  font-weight: 200 1000;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --cream: #fff6e5;
+  --paper: #fffdf8;
+  --parchment: #f3e3c3;
+  --willow: #7fa36b;
+  --leaf: #4f6f45;
+  --amber: #d9913a;
+  --butter: #f7d774;
+  --rose: #c8556b;
+  --cocoa: #5a3e2b;
+  --cocoa-soft: #7a5f4c;
+
+  --bg: var(--cream);
+  --surface: var(--paper);
+  --surface-2: var(--parchment);
+  --text: var(--cocoa);
+  --muted: var(--cocoa-soft);
+  --link: var(--leaf);
+  --accent: var(--willow);
+  --border: #e6d3ae;
+  --btn-bg: var(--leaf);
+  --btn-text: var(--paper);
+  --radius: 18px;
+  --shadow: 0 2px 0 rgba(90, 62, 43, 0.12), 0 8px 24px rgba(90, 62, 43, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #2b211a;
+    --surface: #35291f;
+    --surface-2: #403226;
+    --text: #f3e3c3;
+    --muted: #d9c3a5;
+    --link: #b5d1a0;
+    --accent: #7fa36b;
+    --border: #574433;
+    --btn-bg: #b5d1a0;
+    --btn-text: #2b211a;
+    --shadow: none;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 0.14em; }
+a:focus-visible, .btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+
+.skip {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--surface); color: var(--text); padding: 8px 14px; border-radius: 0 0 10px 0;
+}
+.skip:focus { left: 0; z-index: 10; }
+
+.site-header {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  max-width: 880px; margin: 0 auto; padding: 16px;
+}
+.brand {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--text); text-decoration: none; font-weight: 900; font-size: 1.25rem;
+}
+.brand img { border-radius: 10px; display: block; }
+.lang-nav { display: flex; gap: 8px; }
+.lang-nav a {
+  display: inline-block; padding: 6px 14px; min-height: 44px; line-height: 32px;
+  border-radius: 999px; background: var(--surface-2); color: var(--text);
+  text-decoration: none; font-weight: 700;
+}
+.lang-nav a:hover { background: var(--accent); color: #2b211a; }
+
+main { max-width: 880px; margin: 0 auto; padding: 0 16px 32px; }
+
+h1, h2, h3 { line-height: 1.25; font-weight: 900; }
+h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); margin: 8px 0 4px; }
+h2 { font-size: clamp(1.35rem, 3.6vw, 1.75rem); margin: 0 0 12px; }
+h3 { font-size: 1.15rem; margin: 28px 0 8px; scroll-margin-top: 16px; }
+.sep { color: var(--accent); }
+.meta { color: var(--muted); margin: 0 0 20px; font-size: 0.95rem; }
+
+.card {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px 18px;
+  margin: 0 0 24px;
+  scroll-margin-top: 12px;
+}
+@media (min-width: 640px) { .card { padding: 28px 32px; } }
+
+ul { padding-left: 1.3em; }
+li { margin: 4px 0; }
+code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.88em; background: var(--surface-2); padding: 1px 5px; border-radius: 5px;
+}
+
+.table-wrap { overflow-x: auto; margin: 12px 0; -webkit-overflow-scrolling: touch; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 0.95rem; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+th { background: var(--surface-2); font-weight: 800; }
+/* Narrow screens: each table row becomes a small stacked block with the column name as a label. */
+@media (max-width: 600px) {
+  table { min-width: 0; }
+  thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--border); }
+  td { display: block; border: 0; padding: 2px 0; }
+  td::before { content: attr(data-label); display: block; font-weight: 800; font-size: 0.85rem; color: var(--muted); }
+}
+
+.back { margin-top: 28px; }
+
+/* Landing / game pages */
+.hero { text-align: center; padding: 16px 0 8px; }
+.hero img.icon { width: 128px; height: 128px; border-radius: 28px; box-shadow: var(--shadow); }
+.hero h1 { margin-top: 16px; }
+.tagline { font-size: 1.2rem; color: var(--muted); margin: 4px 0 0; }
+.feature-img { width: 100%; height: auto; border-radius: var(--radius); display: block; box-shadow: var(--shadow); }
+.btn {
+  display: inline-block; min-height: 48px; padding: 12px 22px; border-radius: 999px;
+  background: var(--btn-bg); color: var(--btn-text); text-decoration: none; font-weight: 800;
+}
+.btn.secondary { background: var(--surface-2); color: var(--text); }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 4px; }
+.grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+.grid .card { margin: 0; }
+.soon { color: var(--muted); font-style: italic; }
+
+.site-footer {
+  max-width: 880px; margin: 0 auto; padding: 8px 16px 40px;
+  color: var(--muted); font-size: 0.95rem; text-align: center;
+}
+.site-footer p { margin: 4px 0; }
+
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }

@@ -1,0 +1,14 @@
+# app-ads.txt template for https://huntertrgy.github.io/app-ads.txt
+# NOT LIVE: this file is an example. Do not publish an app-ads.txt with a placeholder id.
+#
+# How to fill it (docs/legal/README-publishing.md section 3):
+#  1. AdMob -> Apps -> View all apps -> "app-ads.txt" -> "How to set up app-ads.txt", or
+#     AdMob -> Settings -> Account information -> Publisher ID (looks like pub-1234567890123456).
+#  2. Copy this file to site/app-ads.txt, delete every line that starts with "#" if you like
+#     (comments are allowed), and replace pub-XXXXXXXXXXXXXXXX with your publisher id.
+#     Keep the rest of the line exactly: google.com, <pub id>, DIRECT, f08c47fec0942fa0
+#  3. Push the site repo; check https://huntertrgy.github.io/app-ads.txt shows the line
+#     (plain text, root of the domain, no redirect).
+#  4. The Google Play listing's Website field must be exactly https://huntertrgy.github.io
+#     AdMob crawls the file after the app is published and linked (24-72 h).
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
