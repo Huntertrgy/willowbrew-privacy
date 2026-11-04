@@ -4,11 +4,15 @@
 # How to fill it (docs/legal/README-publishing.md section 3):
 #  1. AdMob -> Apps -> View all apps -> "app-ads.txt" -> "How to set up app-ads.txt", or
 #     AdMob -> Settings -> Account information -> Publisher ID (looks like pub-1234567890123456).
-#  2. Copy this file to site/app-ads.txt, delete every line that starts with "#" if you like
-#     (comments are allowed), and replace pub-XXXXXXXXXXXXXXXX with your publisher id.
-#     Keep the rest of the line exactly: google.com, <pub id>, DIRECT, f08c47fec0942fa0
-#  3. Push the site repo; check https://huntertrgy.github.io/app-ads.txt shows the line
-#     (plain text, root of the domain, no redirect).
-#  4. The Google Play listing's Website field must be exactly https://huntertrgy.github.io
-#     AdMob crawls the file after the app is published and linked (24-72 h).
+#  2. Save it as app-ads.txt at the ROOT of the separate user-site repo
+#     Huntertrgy/Huntertrgy.github.io (not in site/: this project site is served under
+#     /willowbrew-privacy/ and cannot answer /app-ads.txt). Replace pub-XXXXXXXXXXXXXXXX with
+#     your publisher id and keep the rest of the line exactly:
+#     google.com, <pub id>, DIRECT, f08c47fec0942fa0
+#  3. Push that repo; check https://huntertrgy.github.io/app-ads.txt shows the line
+#     (plain text, root of the host, HTTP 200, no redirect).
+#  4. The Play listing's Website field stays https://huntertrgy.github.io/willowbrew-privacy/ :
+#     AdMob looks for app-ads.txt at the root of that host. It crawls after the app is
+#     published and linked in AdMob (24-72 h).
+#  Runbook: production/release/publish-legal-site.md section 5.
 google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

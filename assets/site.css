@@ -101,6 +101,7 @@ h2 { font-size: clamp(1.35rem, 3.6vw, 1.75rem); margin: 0 0 12px; }
 h3 { font-size: 1.15rem; margin: 28px 0 8px; scroll-margin-top: 16px; }
 .sep { color: var(--accent); }
 .meta { color: var(--muted); margin: 0 0 20px; font-size: 0.95rem; }
+.meta time { white-space: nowrap; }
 
 .card {
   background: var(--surface);
